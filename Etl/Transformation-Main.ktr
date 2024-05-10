@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>Kpi-Transformation-Main</name>
+    <name>Transformation-Main</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -625,7 +625,7 @@
     </hop>
     <hop>
       <from>GetGoal</from>
-      <to>Load_PAA</to>
+      <to>Load-Paa-File</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -635,7 +635,7 @@
     </hop>
     <hop>
       <from>GetProcess</from>
-      <to>Load_SQ_Trimestral</to>
+      <to>Load-SqTrimestral-File</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -645,22 +645,22 @@
     </hop>
     <hop>
       <from>GetProcess 2</from>
-      <to>Load_SQ_Anual</to>
+      <to>Load-SqAnual-File</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>GetProcess</from>
-      <to>Load</to>
+      <to>Load-SqTrimestral-VM</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>GetProcess 2</from>
-      <to>Load2</to>
+      <to>Load-SqAnual-VM</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>GetGoal</from>
-      <to>Load3</to>
+      <to>Load-Paa-VM</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -685,18 +685,18 @@
     </hop>
     <hop>
       <from>GetProcess</from>
-      <to>RDS</to>
-      <enabled>Y</enabled>
+      <to>Load-SqTrimestral-RDS</to>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>GetProcess 2</from>
-      <to>RDS 2</to>
-      <enabled>Y</enabled>
+      <to>Load-SqAnual-RDS</to>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>GetGoal</from>
-      <to>RDS 3</to>
-      <enabled>Y</enabled>
+      <to>Load-Paa-RDS</to>
+      <enabled>N</enabled>
     </hop>
   </order>
   <step>
@@ -1238,7 +1238,7 @@
     </GUI>
   </step>
   <step>
-    <name>Load</name>
+    <name>Load-SqTrimestral-VM</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1309,12 +1309,12 @@
     </remotesteps>
     <GUI>
       <xloc>608</xloc>
-      <yloc>464</yloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Load2</name>
+    <name>Load-SqAnual-VM</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1386,7 +1386,7 @@
     </GUI>
   </step>
   <step>
-    <name>Load3</name>
+    <name>Load-Paa-VM</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1456,13 +1456,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
-      <yloc>0</yloc>
+      <xloc>784</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Load_PAA</name>
+    <name>Load-Paa-File</name>
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1513,13 +1513,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
-      <yloc>64</yloc>
+      <xloc>784</xloc>
+      <yloc>0</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Load_SQ_Anual</name>
+    <name>Load-SqAnual-File</name>
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1571,12 +1571,12 @@
     </remotesteps>
     <GUI>
       <xloc>800</xloc>
-      <yloc>368</yloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Load_SQ_Trimestral</name>
+    <name>Load-SqTrimestral-File</name>
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1894,7 +1894,7 @@
     </GUI>
   </step>
   <step>
-    <name>RDS</name>
+    <name>Load-SqTrimestral-RDS</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1964,13 +1964,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>704</xloc>
+      <xloc>720</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>RDS 2</name>
+    <name>Load-SqAnual-RDS</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -2037,12 +2037,12 @@
     </remotesteps>
     <GUI>
       <xloc>800</xloc>
-      <yloc>208</yloc>
+      <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>RDS 3</name>
+    <name>Load-Paa-RDS</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -2112,7 +2112,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
+      <xloc>784</xloc>
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
